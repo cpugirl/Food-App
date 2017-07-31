@@ -1,37 +1,42 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpModule } from '@angular/http';
+
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
+import { FoodsPage } from '../pages/foods/foods';
 import { ItemDetailsPage } from '../pages/item-details/item-details';
-import { ListPage } from '../pages/list/list';
+import { NutrientsPage } from '../pages/nutrients/nutrients';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { NdbFoodsProvider } from '../providers/ndb-foods/ndb-foods';
 
 @NgModule({
   declarations: [
     MyApp,
-    HelloIonicPage,
+    FoodsPage,
     ItemDetailsPage,
-    ListPage
+    NutrientsPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HelloIonicPage,
+    FoodsPage,
     ItemDetailsPage,
-    ListPage
+    NutrientsPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    NdbFoodsProvider
   ]
 })
 export class AppModule {}

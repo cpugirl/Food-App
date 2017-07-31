@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu"></ion-icon> 
+    </button>
+    <ion-title>
+      Foods
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<!-- <h2>Food data {{ food_list }}</h2>
+ -->  <ion-list>
+    <button ion-item *ngFor="let f of food_list;let i=index">
+     
+      <h2>{{ f }}</h2>
+      <ion-icon name="arrow-forward" item-right></ion-icon>
+    </button>
+  </ion-list>
+</ion-content>
